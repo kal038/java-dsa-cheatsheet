@@ -51,6 +51,29 @@ A practical guide to Java collections commonly used in algorithm and data struct
   ```
 - **Methods**: `put(k, v)`, `get(k)`, `containsKey(k)`, `remove(k)`
 - **Use Case**: Frequency counter, prefix sum, lookup table
+### ✅ `defaultdict(set)` Equivalent
+
+```java
+Map<Integer, Set<Integer>> graph = new HashMap<>();
+
+graph.computeIfAbsent(0, k -> new HashSet<>()).add(1);
+graph.computeIfAbsent(0, k -> new HashSet<>()).add(2);
+graph.computeIfAbsent(1, k -> new HashSet<>()).add(3);
+```
+
+- Automatically creates the set if the key is missing
+
+### ✅ `defaultdict(int)` / `Counter` Equivalent
+
+```java
+Map<String, Integer> freq = new HashMap<>();
+freq.merge("apple", 1, Integer::sum); //or
+freq.put("apple", 1 + freq.getOrDefault("apple", 0));
+```
+
+- Adds 1 if `"apple"` exists
+- Starts at 1 if it doesn’t
+- Integer::sum is a function as an arg
 
 ---
 
