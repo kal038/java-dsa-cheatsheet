@@ -61,6 +61,8 @@ A practical guide to Java collections commonly used in algorithm and data struct
   ```java
   PriorityQueue<Integer> minHeap = new PriorityQueue<>();
   PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+  PriorityQueue<Integer> minHeapWithPair = new PriorityQueue<>((a,b) -> a[0] - b[0]);
+  PriorityQueue<Integer> minHeapWithPairWithFallBack = new PriorityQueue<>((a,b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
   ```
 - **Methods**: `add(x)`, `poll()`, `peek()`
 - **Use Case**: Top-K elements, Dijkstra, greedy problems
@@ -115,7 +117,6 @@ A practical guide to Java collections commonly used in algorithm and data struct
 | `HashSet`        | `add`, `contains`, `remove`          | Uniqueness, visited set                      |
 | `HashMap`        | `put`, `get`, `containsKey`          | Frequency, prefix sums, grouping             |
 | `PriorityQueue`  | `add`, `poll`, `peek`                | Greedy, top-K, shortest path                 |
-| `Deque`          | `addFirst`, `removeLast`             | Sliding window max/min                       |
 | `TreeMap`        | `ceilingKey`, `floorKey`             | Range queries, sorted access                 |
 
 ---
