@@ -30,43 +30,6 @@ A practical guide to Java collections commonly used in algorithm and data struct
 - **Size**: `list.size()`
 - **Use Case**: Resizable array, storing ordered elements
 
----
-
-## 🔁 3. LinkedList
-
-- **Type**: Doubly linked list
-- **Declaration**:
-  ```java
-  LinkedList<Integer> list = new LinkedList<>();
-  ```
-- **Access**: `list.getFirst()`, `list.addLast(x)`, `list.removeFirst()`
-- **Use Case**: Queue, Deque, sliding window problems
-
----
-
-## 🧺 4. Queue (FIFO)
-
-- **Type**: Interface, usually backed by `LinkedList` or `ArrayDeque`
-- **Declaration**:
-  ```java
-  Queue<Integer> q = new LinkedList<>();
-  ```
-- **Methods**: `offer(x)`, `poll()`, `peek()`
-- **Use Case**: BFS, level-order traversal
-
----
-
-## 📥 5. Stack (LIFO)
-
-- **Declaration**:
-  ```java
-  Deque<Integer> stack = new ArrayDeque<>();
-  ```
-- **Methods**: `push(x)`, `pop()`, `peek()`
-- **Use Case**: Backtracking, parentheses validation, monotonic stack
-
----
-
 ## 🔍 6. Set
 
 - **Type**: Unordered collection of unique elements
@@ -104,14 +67,14 @@ A practical guide to Java collections commonly used in algorithm and data struct
 
 ---
 
-## 🪜 9. Deque
+## 🪜 9. Deque (use for both Queue and Stack)
 
 - **Type**: Double-ended queue
 - **Declaration**:
   ```java
   Deque<Integer> dq = new ArrayDeque<>();
   ```
-- **Methods**: `addFirst()`, `addLast()`, `removeFirst()`, `removeLast()`
+- **Methods**: for Queue use OPP (offer(), poll(), peek()), for Stack use PPP (push(), pop(), peek())
 - **Use Case**: Sliding window max/min, Monotonic queue
 
 ---
@@ -148,9 +111,7 @@ A practical guide to Java collections commonly used in algorithm and data struct
 |------------------|--------------------------------------|----------------------------------------------|
 | `Array`          | `arr[i]`, `arr.length`               | DP, prefix sum, binary search                |
 | `ArrayList`      | `add`, `get`, `size`                 | General purpose, 2D grid                     |
-| `LinkedList`     | `addFirst`, `removeLast`             | Queue, Deque, sliding window                 |
-| `Queue`          | `offer`, `poll`, `peek`              | BFS, level-order traversal                   |
-| `Stack` (Deque)  | `push`, `pop`, `peek`                | DFS, parenthesis, monotonic stack            |
+| `Deque`          | `push`, `pop`, `peek`,`offer`, `poll`, `peek`                 | DFS, parenthesis, monotonic stack            |
 | `HashSet`        | `add`, `contains`, `remove`          | Uniqueness, visited set                      |
 | `HashMap`        | `put`, `get`, `containsKey`          | Frequency, prefix sums, grouping             |
 | `PriorityQueue`  | `add`, `poll`, `peek`                | Greedy, top-K, shortest path                 |
